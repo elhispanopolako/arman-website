@@ -1,5 +1,20 @@
-<%- include("partials/header.ejs") %>
+<%- include("partials/header.ejs",{active:active}) %>
 
+<section class="hero">
+    <div class="content">
+        <h1>Profesjonalne usługi budowlane<br> Arman Firma Usługowa</h1>
+        <p>Szukasz fachowców, którzy zadbają o perfekcyjne wykończenie Twojego wnętrza? Specjalizujemy się w układaniu płytek, remontach i wykończeniach wnętrz.</p>
+        <a href="/contact" class="btn btn-primary">Zamów wycenę</a>
+    </div>
+    <div class="contentImage">
+        <two-up class="my-two-up">
+            <div><img src="//i.guim.co.uk/img/media/fecd1f17ecc214368af002ed87a87bf811903322/116_45_3426_2228/master/3426.jpg?width=2000&quality=85&s=631bb786ca02560e3b0654ac30904178" alt=""></div>
+            <div>
+              <img src="//i.guim.co.uk/img/media/fecd1f17ecc214368af002ed87a87bf811903322/0_2418_3543_2304/master/3543.jpg?width=2000&quality=85&s=aca8842b6ae4f22827ad6f4a4a494d19" alt="">
+            </div>
+          </two-up>
+    </div>
+</section>
 
 
 <%- include("partials/footer.ejs") %>
