@@ -5,11 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Arman Firma Usługowa</title>
         <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
         <script src="https://unpkg.com/two-up-element@1.0.1/dist/two-up.js"></script>
     </head>
     <body>
         <header>
             <div class="logo"> <a href="/"><img src="/images/armanLogo.jpg"></a></div>
+            <div id="menu-mobile">
+                <span id="open" class="material-symbols-outlined">menu</span>
+                <span id="close" class="material-symbols-outlined">close</span>
+
+            </div>
+
             <nav  id="menu">
                 <ul>
                     <li class="<%= active %>"><a href="/">Strona Główna</a></li>
