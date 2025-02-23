@@ -1,10 +1,39 @@
 <%- include("partials/header.ejs",{active:active}) %>
 
-    <section class="realizationsContainer">
-        <h1>IN PROGRESS</h1>
+    <section class="realizations">
+        <h1>Nasze Realizacje</h1>
+        <div class="masonry-realizations">
+            <% projects.forEach(project=> { %>
+                <div class="realization">
+                    <img src="<%= project.image %>" alt="<%= project.title %>"
+                        onclick="openLightbox('<%= project.image %>')">
+                    <div class="overlay">
+                        <h3>
+                            <%= project.title %>
+                        </h3>
+                        <p>
+                            <%= project.description %>
+                        </p>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
 
-    </section>
+        <!-- Lightbox for image preview -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+
+        <script>
+            function openLightbox(imageSrc) {
+                document.getElementById("lightbox-img").src = imageSrc;
+                document.getElementById("lightbox").style.display = "flex";
+            }
+
+            function closeLightbox() {
+                document.getElementById("lightbox").style.display = "none";
+            }
+        </script>
 
 
-
-    <%- include("partials/footer.ejs") %>
+        <%- include("partials/footer.ejs") %>
