@@ -305,7 +305,7 @@ section.services {
     nav {
         display: block;
         background: #fff;
-        position: absolute;
+        position: fixed;
         top: 100px;
         padding-top: 70px;
         height: 100%;
