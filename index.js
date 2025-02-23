@@ -19,22 +19,22 @@ app.use(bodyParser.json());
 
 
 app.get("/", (req, res) => {
-    res.render("home.ejs",{active:'home'})
+    res.render("home.ejs", { active: 'home' })
 });
 app.get("/about", (req, res) => {
-    res.render("about.ejs",{active:'about'})
+    res.render("about.ejs", { active: 'about' })
 });
 app.get("/services", (req, res) => {
-    res.render("home.ejs",{active:'services'})
+    res.render("services.ejs", { active: 'services' })
 });
 app.get("/realizations", (req, res) => {
-    res.render("home.ejs",{active:'realizations'})
+    res.render("realizations.ejs", { active: 'realizations' })
 });
 app.get("/contact", (req, res) => {
-    res.render("contact.ejs",{active:'contact'})
+    res.render("contact.ejs", { active: 'contact' })
 });
 
-app.post("/submit",async (req,res)=>{
+app.post("/submit", async (req, res) => {
     const { name, surname, email, phone, message } = req.body;
 
     const transporter = nodemailer.createTransport({
@@ -51,15 +51,14 @@ app.post("/submit",async (req,res)=>{
         subject: `Nowa wiadomość od ${name} ${surname}`,
         text: `Imię: ${name}\nNazwisko: ${surname}\nEmail: ${email}\nTelefon: ${phone}\n\nWiadomość:\n${message}`
     };
-    
+
     try {
         await transporter.sendMail(mailOptions);
-        res.render("contact.ejs",{active:'contact',toast:'Wiadomość wysłana!'})
+        res.render("contact.ejs", { active: 'contact', toast: 'Wiadomość wysłana!' })
     } catch (error) {
         res.status(500).send(error.toString());
     }
 })
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
-  });
-  
+});
