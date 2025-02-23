@@ -262,6 +262,7 @@ section.services {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-bottom: 200px;
 }
 
 .service {
@@ -276,6 +277,10 @@ section.services {
     margin: 10px;
     border: 1px solid #ccc;
     transition: 0.4s ease;
+}
+
+.service h2 {
+    text-align: center;
 }
 
 .service:hover {
