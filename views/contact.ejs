@@ -1,43 +1,45 @@
 <%- include("partials/header.ejs",{active:active}) %>
-<section class="contact-section">
-    <div class="contactInfo">
-        <h1>Masz pytania?</h1>
-        <h2>Chciałbyś zamówić bezpłatną wycenę?</h2>
-        <p>Skontaktuj się z nami! – odpowiemy na Twoje pytania i przygotujemy bezpłatną wycenę</p>
-        <div class="detailsWithIcon">
-            <span class="material-symbols-outlined">call</span> <p> (+48) 65 674 53 64</p>
-        </div>
-        <div class="detailsWithIcon">
-            <span class="material-symbols-outlined">mail</span> <p>adres@email.net</p>
-        </div>
-
-    </div>
-    <div class="contact-form">
-        <h2>Wypełnij formularz kontaktowy</h2>
-        <form action="/submit" method="POST">
-            <input type="text" name="name" placeholder="Imię*" required>
-            <input type="text" name="surname" placeholder="Nazwisko*" required>
-            <input type="email" name="email" placeholder="Adres email*" required>
-            <input type="tel" name="phone" placeholder="Telefon*">
-            <textarea name="message" placeholder="Wiadomość*" required></textarea>
-            <div >
-            <button class="btn" type="submit">Wyślij wiadomość</button>
+    <section class="contact-section">
+        <div class="contactInfo">
+            <h1>Masz pytania?</h1>
+            <h2>Chciałbyś zamówić bezpłatną wycenę?</h2>
+            <p>Skontaktuj się z nami! – odpowiemy na Twoje pytania i przygotujemy bezpłatną wycenę</p>
+            <div class="detailsWithIcon">
+                <span class="material-symbols-outlined">call</span>
+                <p> +48 793 222 552</p>
             </div>
-        </form>
-    </div>
-</section>
-<script>
-    let local = ""
-    <%if(locals.toast){ %>
-        local = "<%= toast %>" 
-    <%}%>    
-    window.toast = local;
-</script>
+            <div class="detailsWithIcon">
+                <span class="material-symbols-outlined">mail</span>
+                <p>antoniowozniak@gmail.com</p>
+            </div>
 
-<script src="/src/toasts.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        </div>
+        <div class="contact-form">
+            <h2>Wypełnij formularz kontaktowy</h2>
+            <form action="/submit" method="POST">
+                <input type="text" name="name" placeholder="Imię*" required>
+                <input type="text" name="surname" placeholder="Nazwisko*" required>
+                <input type="email" name="email" placeholder="Adres email*" required>
+                <input type="tel" name="phone" placeholder="Telefon*">
+                <textarea name="message" placeholder="Wiadomość*" required></textarea>
+                <div class="submitBtn">
+                    <button class="btn" type="submit">Wyślij wiadomość</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        let local = ""
+            <%if (locals.toast) { %>
+                local = "<%= toast %>"
+                    <%}%>
+                        window.toast = local;
+    </script>
+
+    <script src="/src/toasts.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
 
 
 
-<%- include("partials/footer.ejs") %>
+    <%- include("partials/footer.ejs") %>
